@@ -2,6 +2,7 @@ from pyexpat import model
 from venv import create
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):
@@ -28,6 +29,11 @@ class Post(models.Model):
         auto_now=True
     )
     
+    class Meta:
+        ordering = ("-create",)
+    
     def __str__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return reverse("blog:detail", kwargs={"slug": self.slug})
