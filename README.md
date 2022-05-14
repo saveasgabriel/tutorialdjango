@@ -6,4 +6,4 @@
 
 # Refere-se a um site que armazena de maneira simples artigos
 
-# localhost/blog
+# apos iniciar servidor inserir no navegador 'localhost/blog'
